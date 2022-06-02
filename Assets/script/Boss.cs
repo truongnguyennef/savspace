@@ -1,22 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Boss : MonoBehaviour
 {
     [SerializeField] float ActiveTime = 5f;
 
     [SerializeField] public float speed = 1f;
+    [SerializeField] public float healthdown;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject ExplosionEffect;
-    [SerializeField] GameObject boss;
-    public static float health = 1.5f;
+
+    public static float health ;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        health = 1.5f;
+        health = 0.2f;
 
         Invoke("DestroyMyself", ActiveTime);
 
@@ -29,7 +33,14 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.x > 1.85)
+        {
+            rb.velocity = new Vector2(-speed, 0);
+        }
+        if(transform.position.x < -2.2)
+        {
+            rb.velocity = new Vector2(speed, 0);
+        }
     }
     //void DestroyMyself()
     //{
@@ -42,13 +53,9 @@ public class Boss : MonoBehaviour
     {
         GameObject explosion = Instantiate(ExplosionEffect);
         explosion.transform.position = this.transform.position;
-        health -= 0.5f;
+        health -= healthdown;
         Debug.Log("heal残り"+　health);
-        if (health <= 0)
-        {
-            //GameSceneManager.Score++;
-            //Destroy(this.gameObject);
-        }
+        DownLife();
     }
 
     void Shoot()
@@ -62,4 +69,20 @@ public class Boss : MonoBehaviour
             bulletRigid.AddForce(new Vector2(i, -100f));
         }
     }
+
+    void DownLife()
+    {
+        if (health <= 0)
+        {
+            GameSceneManager.Score++;
+            Destroy(this.gameObject);
+            //WaitForSeconds(100);
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    // void WaitForSeconds(int v)
+    //{
+    //    throw new NotImplementedException();
+    //}
 }

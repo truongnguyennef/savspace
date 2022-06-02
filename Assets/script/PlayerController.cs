@@ -8,14 +8,14 @@ public class PlayerController : MonoBehaviour
     AudioSource BulletSE;
     [SerializeField] GameObject ExplosionEffect;
     [SerializeField] List<GameObject> EnemyPortList = new List<GameObject>();
-
     [SerializeField] GameSceneManager mygameManager;
-    public static float healthAmount = 2.1f;
+    [SerializeField] public float healthdown;
+    public static float healthAmount = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 2.1f;
-        InvokeRepeating("ShootS", 0f, 1f);
+        healthAmount = 0.2f;
+        InvokeRepeating("ShootS", 0f, 0.5f);
         BulletSE = GetComponent<AudioSource>();
         for (int i = 0; i < EnemyPortList.Count; i++)
         {
@@ -30,7 +30,10 @@ public class PlayerController : MonoBehaviour
         //透明化
         //GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, -0.001f);   
         //マウスに合わせて飛行機が横に移動
-        transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y);
+        //transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y);
+        transform.position = new Vector2(
+            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, -2.6f, 2.6f),
+            Mathf.Clamp(transform.position.y, -3.5f, -3.5f));
     }
     void ShootS()
     {
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject explosion = Instantiate(ExplosionEffect);
         explosion.transform.position = this.transform.position;
-        healthAmount -= 0.7f;
+        healthAmount -= healthdown;
 
         if (healthAmount <= 0)
         {
@@ -78,9 +81,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-      
 
-        //Destroy(this.gameObject); //自分自身のオブジェクトを消去
     }
 
 }

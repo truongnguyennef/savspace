@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
+    //[SerializeField] Boss boss;
     public void Load(string scenename)
     {
         SceneManager.LoadScene(scenename);
@@ -20,6 +21,10 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if(boss == null)
+        //{
+        //    Debug.Log("a");
+        //    SceneManager.LoadScene(2);
+        //}
     }
 }

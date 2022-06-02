@@ -9,7 +9,7 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] Button UIButton;
     [SerializeField] List<GameObject> EnemyPortList = new List<GameObject>();
     int timer = 3; //タイマーです。初期値は3
-    public static int Score = 0;
+    public static int Score ;
 
     void Start()
     {

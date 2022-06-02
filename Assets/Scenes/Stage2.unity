@@ -333,6 +333,8 @@ MonoBehaviour:
   - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
   - {fileID: 3123385499548984489, guid: 9054cf2d68e37e549a84ed253bbcaf75, type: 3}
   - {fileID: 6692617669750501080, guid: 3e1ecf00c05bc7e4388dde7014a12485, type: 3}
+  boss: {fileID: 0}
+  score: 0
 --- !u!4 &270831600
 Transform:
   m_ObjectHideFlags: 0
@@ -395,6 +397,8 @@ MonoBehaviour:
   - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
   - {fileID: 3123385499548984489, guid: 9054cf2d68e37e549a84ed253bbcaf75, type: 3}
   - {fileID: 6692617669750501080, guid: 3e1ecf00c05bc7e4388dde7014a12485, type: 3}
+  boss: {fileID: 0}
+  score: 0
 --- !u!1 &384213329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1552,8 @@ MonoBehaviour:
   - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
   - {fileID: 3123385499548984489, guid: 9054cf2d68e37e549a84ed253bbcaf75, type: 3}
   - {fileID: 6692617669750501080, guid: 3e1ecf00c05bc7e4388dde7014a12485, type: 3}
+  boss: {fileID: 0}
+  score: 0
 --- !u!4 &1260200728
 Transform:
   m_ObjectHideFlags: 0
@@ -2058,7 +2064,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 779eed194c9fd394f9d218f20394df38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fa0a5a61b21c4047a83d1ea4c4598ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2078,7 +2084,7 @@ Transform:
   m_GameObject: {fileID: 2081726641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.5, z: -1}
-  m_LocalScale: {x: 0.62, y: 0.62, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2110,7 +2116,9 @@ MonoBehaviour:
   bullet: {fileID: 1470426015370010373, guid: 2692be0e2f1fd3f488e94d1234c6cf3e, type: 3}
   ExplosionEffect: {fileID: 7403780160504727205, guid: 887bd0efe5805a4488cd261fdfd561ed,
     type: 3}
+  EnemyPortList: []
   mygameManager: {fileID: 519420034}
+  healthdown: 0
 --- !u!70 &2081726646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2124,8 +2132,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: -0.18}
-  m_Size: {x: 0.66, y: 1.35}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.3, y: 0.3}
   m_Direction: 0
 --- !u!82 &2081726647
 AudioSource:

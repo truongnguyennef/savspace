@@ -24,8 +24,6 @@ public class NormalEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (healthAmount <= 0)
-        //    DestroyMyself();
     }
 
     void DestroyMyself()
@@ -39,15 +37,10 @@ public class NormalEnemy : MonoBehaviour
     {
        
         GameObject explosion = Instantiate(ExplosionEffect);
-        explosion.transform.position = this.transform.position;
-        //if (collision.gameObject.name.Equals(""))
-        //    healthAmount -= 2f;
-        //if(healthAmount <= 0)
-        //{
-            GameSceneManager.Score++;
+        explosion.transform.position = this.transform.position;        
+        GameSceneManager.Score++;
 
-            Destroy(this.gameObject); //自分自身のオブジェクトを消去
-        //}
+        Destroy(this.gameObject); //自分自身のオブジェクトを消去
        
     }
     void ShootS()

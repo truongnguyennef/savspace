@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6692617669750501080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 6, z: 5}
+  m_LocalPosition: {x: -0.82, y: -18.090218, z: -1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0b0e02f02233a244d90d0ecaeacc426e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a5ba1cefc0e6ea4ba04047ff68c0fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,3 +138,4 @@ MonoBehaviour:
   bullet: {fileID: 1470426015370010373, guid: 7383b63d7e1aef3488747a99eaec8f6b, type: 3}
   ExplosionEffect: {fileID: 7403780160504727205, guid: 887bd0efe5805a4488cd261fdfd561ed,
     type: 3}
+  boss: {fileID: 0}

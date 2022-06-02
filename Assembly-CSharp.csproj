@@ -55,6 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_CreateWindowShareLink.cs" />
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_DestroyWindow.cs" />
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_GraphicsManager.cs" />
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_NavigationInformation.cs" />
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_SceneNavigation.cs" />
+     <Compile Include="Assets\Mobile Game GUI Vector Pack\DEMO_Scripts\DEMO_SoundManager.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\Bonus.cs" />
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\Boundary.cs" />
@@ -73,6 +79,8 @@
      <Compile Include="Assets\Space Shooter Template FREE\Scripts\Wave.cs" />
      <Compile Include="Assets\script\AimingEnemy.cs" />
      <Compile Include="Assets\script\BGContoroller.cs" />
+     <Compile Include="Assets\script\Boss.cs" />
+     <Compile Include="Assets\script\BossHealth1.cs" />
      <Compile Include="Assets\script\Bullet.cs" />
      <Compile Include="Assets\script\CountDownSE.cs" />
      <Compile Include="Assets\script\EnemyPort.cs" />
@@ -81,6 +89,7 @@
      <Compile Include="Assets\script\NormalEnemy.cs" />
      <Compile Include="Assets\script\PlayerController.cs" />
      <Compile Include="Assets\script\SceneLoader.cs" />
+     <Compile Include="Assets\script\Score.cs" />
      <Compile Include="Assets\script\SuperEnemy.cs" />
      <Compile Include="Assets\script\Test.cs" />
  <Reference Include="UnityEngine">

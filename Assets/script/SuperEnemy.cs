@@ -22,18 +22,6 @@ public class SuperEnemy : MonoBehaviour
         InvokeRepeating("Shoot", 0.5f, 2f);
        
     }
-    //void Update()
-    //{
-    //    Debug.Log(GameSceneManager.Score);
-    //    if (GameSceneManager.Score >= 5)
-    //    {
-    //        Instantiate(boss);
-    //        boss.transform.position = this.transform.position;
-    //        rb = GetComponent<Rigidbody2D>();
-    //        rb.velocity = new Vector2(0, -speed);
-    //        InvokeRepeating("Shoot", 0.5f, 2f);
-    //    }
-    //}
 
     void DestroyMyself()
     {
