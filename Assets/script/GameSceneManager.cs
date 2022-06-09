@@ -7,6 +7,7 @@ public class GameSceneManager : MonoBehaviour
 {
     [SerializeField] Text UIText;
     [SerializeField] Button UIButton;
+    [SerializeField] GameObject player;
     [SerializeField] List<GameObject> EnemyPortList = new List<GameObject>();
     int timer = 3; //タイマーです。初期値は3
     public static int Score ;
@@ -40,9 +41,19 @@ public class GameSceneManager : MonoBehaviour
         UIText.gameObject.SetActive(false);
     }
 
+    //void Update()
+    //{
+    //    Debug.Log("testtttttttttttttt");
+    //    if (player == null)
+    //    {
+    //        AddScoreToText();
+    //        Debug.Log("testtttttttt455666666666tttttt");
+    //    }
+    //}
     public void AddScoreToText() //他のスクリプトからアクセスするからpublicで！
     {
-        UIText.text = "Score: " + Score.ToString();  //テキストにスコアを代入
+        UIText.text = "GameOver";
+       // UIText.text = "Score: " + Score.ToString();  //テキストにスコアを代入
         UIText.gameObject.SetActive(true);  //テキストをアクティブにする
         UIButton.gameObject.SetActive(true);
     }

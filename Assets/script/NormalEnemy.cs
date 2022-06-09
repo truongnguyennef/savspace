@@ -8,6 +8,7 @@ public class NormalEnemy : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject ExplosionEffect;
+    [SerializeField] int score;
     private Rigidbody2D rb;
     //public static float healthAmount = 6f;
 
@@ -38,7 +39,7 @@ public class NormalEnemy : MonoBehaviour
        
         GameObject explosion = Instantiate(ExplosionEffect);
         explosion.transform.position = this.transform.position;        
-        GameSceneManager.Score++;
+        GameSceneManager.Score+= score;
 
         Destroy(this.gameObject); //自分自身のオブジェクトを消去
        

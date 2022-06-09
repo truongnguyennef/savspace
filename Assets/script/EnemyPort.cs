@@ -35,13 +35,36 @@ public class EnemyPort : MonoBehaviour
                 EnemyList[i].SetActive(false);
             }
             Debug.Log(GameSceneManager.Score);
-            if(boss != null)
-            {
-                boss.SetActive(true);
-            }
             
+            Invoke("SetBossActive", 5f);
+                
+            //StartCoroutine("BossSetActive");
+            //if(boss == null)
+            //{
+            //    SceneLoader.Destroy(boss);
+            //}
+                //boss.SetActive(true);
+            //}
         }
     }
+
+    void SetBossActive()
+    {
+        
+        if(boss != null)
+            boss.SetActive(true);
+        else
+            boss = null;
+    }
+    IEnumerator BossSetActive()
+    {
+        Debug.Log("Test");
+        yield return new WaitForSeconds(8.0f);
+        boss.SetActive(true);
+
+    }
+
+
 
     private Vector3 getScreenTopLeft()
     {

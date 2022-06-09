@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] float ActiveTime = 5f;
-
     [SerializeField] public float speed = 1f;
     [SerializeField] public float healthdown;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject ExplosionEffect;
+    [SerializeField] GameObject boss;
+    [SerializeField] int score;
+
+    [SerializeField] List<GameObject> EnemyList = new List<GameObject>();
 
     public static float health ;
 
@@ -21,12 +23,8 @@ public class Boss : MonoBehaviour
     void Start()
     {
         health = 0.2f;
-
-        Invoke("DestroyMyself", ActiveTime);
-
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(speed, 0);
-       
         InvokeRepeating("Shoot", 0.5f, 2f);
     }
 
@@ -40,7 +38,7 @@ public class Boss : MonoBehaviour
         if(transform.position.x < -2.2)
         {
             rb.velocity = new Vector2(speed, 0);
-        }
+        }   
     }
     //void DestroyMyself()
     //{
@@ -74,15 +72,32 @@ public class Boss : MonoBehaviour
     {
         if (health <= 0)
         {
-            GameSceneManager.Score++;
+            GameSceneManager.Score+= score;
             Destroy(this.gameObject);
-            //WaitForSeconds(100);
-            SceneManager.LoadScene(2);
+            Invoke("LoadSceneStage2", 5f);
+            SaveScore();
+
+            
+            Debug.Log("Doi 5s lan1");
+
+            SceneManager.LoadScene(2); 
+
         }
     }
 
-    // void WaitForSeconds(int v)
-    //{
-    //    throw new NotImplementedException();
-    //}
+    void LoadSceneStage2()
+    {
+        Debug.Log("Doi 5s lan3");
+        Debug.Log("doi 5s");
+        SceneManager.LoadScene(2);
+        Debug.Log("Doi 5s lan2");
+
+    }
+    void SaveScore()
+    {
+        PlayerPrefs.SetInt("SCORE", GameSceneManager.Score);
+        PlayerPrefs.Save();
+        int score = PlayerPrefs.GetInt("SCORE");
+        Debug.Log(score + "save");
+    }
 }

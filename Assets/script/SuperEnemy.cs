@@ -10,6 +10,7 @@ public class SuperEnemy : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject ExplosionEffect;
     [SerializeField] GameObject boss;
+    [SerializeField] int score;
 
     private Rigidbody2D rb;
 
@@ -34,7 +35,7 @@ public class SuperEnemy : MonoBehaviour
     {
         GameObject explosion = Instantiate(ExplosionEffect);
         explosion.transform.position = this.transform.position;
-        GameSceneManager.Score++;
+        GameSceneManager.Score+= score;
         Destroy(this.gameObject);
     }
 
